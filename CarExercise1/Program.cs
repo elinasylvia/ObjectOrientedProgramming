@@ -12,13 +12,12 @@ namespace CarExercise1
             car1.ShowCarInfo();
             car1.Accelerate(10);
             car1.Brake();
-            car1.Brake();
-
             car1.ShowCarInfo();
+
             Car car2 = new Car();
             car2.AskData();
             car2.ShowCarInfo();
-            car2.Accelerate(10);
+            car2.Accelerate(15);
             car2.Brake();
             car2.ShowCarInfo();
             Console.WriteLine("Car tehtävä loppui");

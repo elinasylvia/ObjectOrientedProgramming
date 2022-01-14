@@ -29,16 +29,20 @@ namespace CarExercise1
         }
         public void Accelerate(int change) 
         {
+            if (change < 0)
+            {
+                return;
+            }
             this.speed += change;
-
+            Console.WriteLine($"Auton nopeutta lisättiin {change} km/h");
         }
         public void Brake()
         {
             double speedBreak=this.speed*0.1;
-            if (this.speed >= speedBreak)
-            {
+           
                 this.speed -= this.speed * 0.1;
-            }
+                Console.WriteLine($"Nopeutta vähennettiin 10%({speedBreak} km/h)");
+         
             
         }
         public void ShowCarInfo()
