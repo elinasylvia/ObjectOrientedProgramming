@@ -25,7 +25,7 @@ namespace BookExercise
             this.title = title;
         }
 
-        public Book(string title, string author, string id, double price) 
+        public Book(string title, string author, string id, double price)
         {
             this.title = title;
             this.author = author;
@@ -37,11 +37,13 @@ namespace BookExercise
         {
             //return this.author + ", " + this.title + ", " + this.id + ", " + this.price;
             return $"{this.author}, {this.title}, {this.id}, {this.price:F2}";
-        }   
+        }
 
         public void SetId(string idValue)
         {
             //tarkista tässä onko id:n pituus viisi merkkiä, if...
+
+            // while, jos haluaa, että kysyy niin monta kertaa, että antaa oikean pituisen id:n
             if (idValue.Length != 5)
             {
                 Console.WriteLine("Id not valid");
@@ -62,9 +64,14 @@ namespace BookExercise
             {
                 Console.WriteLine($"{this.title} on kalliimpi kuin {book.title}");
             }
-            else
+
+            else if (this.price < book.price)
             {
                 Console.WriteLine($"{book.title} on kalliimpi kuin {this.title}");
+            }
+            else
+            {
+                Console.WriteLine($"{book.title} on samanhintainen kuin {this.title}");
             }
 
 
