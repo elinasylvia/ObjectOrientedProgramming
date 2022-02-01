@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Literature;
 
 namespace BookAndAuthor
 {
@@ -32,14 +33,11 @@ namespace BookAndAuthor
             }
 
             set
-
-
-            {
-                //Console.WriteLine("value-muuttujan author: " + value.Author);   
-                //Console.WriteLine("this.author: " + this._name);
-
-                //if( value.Author == this._name)
-
+            { 
+                if (value == null)
+                {
+                    return;
+                }
                 if(this._name.Equals(value.Author))
                 {
                     this.book = value;
@@ -52,7 +50,12 @@ namespace BookAndAuthor
         {
             Console.WriteLine($"Kirjailijan nimi: {this._name}");
             Console.WriteLine($"Kirjailijan syntymäaika: {this._birthday}");
-            Console.WriteLine($"Kirjailijan kirjoittama kirja: {this.Book.ToString()}");
+                if (this.Book != null)
+            {
+                Console.WriteLine($"Kirjailijan kirjoittama kirja: {this.Book.Name}");
+            }
+
+            
 
         }
     }

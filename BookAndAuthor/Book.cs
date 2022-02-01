@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookAndAuthor
+namespace Literature
 {
     class Book
     {
@@ -17,27 +17,26 @@ namespace BookAndAuthor
         public Book()
         {
             _name = string.Empty;
-            
-            _price = 0;
-            
-   
+            _author = string.Empty;
+            _publisher = string.Empty;
+            this.Price = 0;
+            this.Isbn = string.Empty;
         }
-
 
         public Book(string name, string author, string publisher, double price, string isbn)
         {
             _name = name;
             _author = author;
             _publisher = publisher;
-           this.Price = price;
-           this.Isbn = isbn;
+            this.Price = price;
+            this.Isbn = isbn;
         }
 
         public string Name
         {
-            get 
+            get
             {
-                return _name; 
+                return _name;
             }
 
             set
@@ -45,7 +44,7 @@ namespace BookAndAuthor
                 _name = value;
             }
 
-       }
+        }
 
         public string Author
         {
@@ -55,13 +54,24 @@ namespace BookAndAuthor
             }
         }
 
-        public string Publisher { get => _publisher; set => _publisher = value; }
-        public double Price 
+        public string Publisher
+        {
+            get
+            {
+                return _publisher;
+            }
+
+            set 
+            {
+                _publisher = value; 
+            }
+        }
+        public double Price
         {
 
-            get 
-            { 
-                return _price; 
+            get
+            {
+                return _price;
             }
             set
             {
@@ -72,7 +82,7 @@ namespace BookAndAuthor
                 }
             }
         }
-        public string Isbn 
+        public string Isbn
         {
 
             get
@@ -87,7 +97,7 @@ namespace BookAndAuthor
                     Console.WriteLine("Pituuden täytyy olla 13 merkkiä");
                     return;
                 }
-                if (value.Substring(0,3) != Prefix )
+                if (value.Substring(0, 3) != Prefix)
                 {
                     Console.WriteLine($"Kirjan ISBN tunniste on väärä, eikä sitä voitu tulostaa. ISBN - tunnisteen tulee alkaa numeroilla: {Prefix}");
                     return;
@@ -95,7 +105,17 @@ namespace BookAndAuthor
                 _isbn = value;
             }
         }
-        public static string Theme { get => _theme; set => _theme = value; }
+        public static string Theme 
+        { 
+            get 
+            { 
+                return _theme; 
+            } 
+            set 
+            {
+                _theme = value; 
+            } 
+        }
 
         public string GetBookDetails(string compareIsbn)
         {

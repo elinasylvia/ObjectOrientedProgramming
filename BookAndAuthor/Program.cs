@@ -1,4 +1,5 @@
 ﻿using System;
+using Literature;
 
 namespace BookAndAuthor
 {
@@ -25,22 +26,18 @@ namespace BookAndAuthor
             Book book4 = new Book();
             book4.Name = "Ympäristöoppi";
             book4.Price = 45.60;
-            Console.WriteLine($"Kirjan 'Ympäristöoppi' alennettu hinta on {book4.Price} euroa.");
+            Console.WriteLine($"Kirjan '{book4.Name}' alennettu hinta on {book4.Price} euroa.");
             Console.WriteLine();
 
             Book book5 = new Book("Musiikki 3", "Suvi Sävel", "Gummerus", 29.90, "978-951-52313-2-6");
-            Console.WriteLine($"Kirjan Musiikki 3, on kirjoittanut {book5.Author}.");
-            
-            
+            Console.WriteLine($"Kirjan '{book5.Name}', on kirjoittanut {book5.Author}.");
 
-
-            //Console.WriteLine($"1. kirjan nimi on: {book1.Name}");
-            ////Console.WriteLine($"2. kirjan nimi on: {book2.Name} ja sen on kirjoittanut: {book2.Author}");
-
-            //Author author1 = new Author();
-            //Author author2 = new Author("Mikko Manninen", "1.6.1984", book1);
-
-            //author2.PrintInfo();
+            Author author1 = new Author();
+            Author author2 = new Author("Mikko Manninen", "1.6.1984", book1);
+            Author author3 = new Author("Kirsi Kauha", "5.9.1968", book3);
+            author1.PrintInfo();
+            author2.PrintInfo();
+            author3.PrintInfo();
         }
     }
 }
