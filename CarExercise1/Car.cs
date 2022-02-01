@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CarExercise1
 {
-    //testikommentti
+   
     class Car
     {
         public string brand;
