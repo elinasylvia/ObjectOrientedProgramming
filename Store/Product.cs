@@ -19,7 +19,7 @@ namespace StoreExercise
 
         public double CalculateTotal()
         {
-            return this.price * this.amount;
+            return Math.Round(this.price * this.amount, 2);
         }
 
         public Product GetProduct(string name)

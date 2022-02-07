@@ -32,6 +32,23 @@ namespace StoreExercise
             myStore.AddProduct(new Product ("Uimapatja", 19.99, 800));
           
             myStore.PrintProducts();
+
+            List<Customer> customerList = new List<Customer>();
+            customerList.Add(new Customer("Maija Mehiläinen", 250));
+            customerList.Add(new Customer("Ville Mehiläinen", 2000));
+            customerList.Add(new Customer("Kurt", 300));
+
+            foreach (Customer currentCustomer in customerList)
+            {
+                Console.WriteLine($"Asiakkaan {currentCustomer.ToString()}, bonus on: {currentCustomer.GetBonus()} euroa");
+            }
+
+            myStore.AddCustomer(new Customer("Flip", 3000));
+            myStore.AddCustomer(new Customer("Kassandra", 2000));
+            myStore.AddCustomer(new Customer("Tekla", 24000));
+
+            myStore.PrintCustomers();
+
         }
     }
 }
