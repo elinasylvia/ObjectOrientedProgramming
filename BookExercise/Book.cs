@@ -4,6 +4,8 @@ using System.Text;
 
 namespace BookExercise
 {
+    
+    //testikommentti
     class Book
     {
         public string title;
