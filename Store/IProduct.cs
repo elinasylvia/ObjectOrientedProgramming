@@ -6,7 +6,6 @@ namespace StoreExercise
 {
     interface IProduct
     {
-
         Product GetProduct(string name);
         double CalculateTotal();
     }
