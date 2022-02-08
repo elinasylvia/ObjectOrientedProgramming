@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Animal
 {
-    class Bird : Animal
+    class Bird : Animal, IComparable<Bird>
     {
 
         protected string birdClass; //luokka
@@ -23,6 +24,11 @@ namespace Animal
             Console.WriteLine("Bird-luokan muodostin: ");
             this.birdClass = birdClass;
             this.legCount = legs;
+        }
+
+        public int CompareTo([AllowNull] Bird other)
+        {
+            return this.age.CompareTo(other.age);
         }
 
         public override bool Equals(object obj)
