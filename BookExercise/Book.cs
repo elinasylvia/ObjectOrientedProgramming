@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace BookExercise
 {
     
     //testikommentti
-    class Book
+    class Book : IComparable<Book>
     {
         public string title;
         public string author;
@@ -77,6 +78,11 @@ namespace BookExercise
             }
 
 
+        }
+
+        public int CompareTo([AllowNull] Book other)
+        {
+            return this.price.CompareTo(other.price);
         }
     }
 }
