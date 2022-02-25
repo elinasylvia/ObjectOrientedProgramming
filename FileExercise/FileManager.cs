@@ -27,15 +27,20 @@ namespace FileExercise
         // Constructor
         public FileManager(string filePath)
         {
-            this.filePath = String.Empty;
+            this.filePath = filePath;
         }
 
         public string ReadWords()
         {
             string content = String.Empty;
-
-            content = ReadFile();
-
+            try
+            {
+                content = ReadFile();
+            }
+            catch(WordListNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             return content;
         }
 

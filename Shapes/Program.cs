@@ -11,11 +11,11 @@ namespace Shapes
             Console.WriteLine("Shapes-tehtävä\n");
             List<Shape> allShapes = new List<Shape>
             {
-                new Circle("red", 6),
-                new Circle("blue", 2),
-                new Triangle(4,7, "green"),
-                new Triangle(8,12, "yellow"),
-                new Rectangle(6,10, "black")
+                new Circle("punainen", 6),
+                new Circle("sininen", 2),
+                new Triangle(4,7, "vihreä"),
+                new Triangle(8,12, "keltainen"),
+                new Rectangle(6,10, "musta")
 
             };
             allShapes.Sort();

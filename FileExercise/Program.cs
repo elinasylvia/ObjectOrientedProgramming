@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -8,26 +9,13 @@ namespace FileExercise
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            string filePath = "linkki tekstitiedostoon tähän";
+            Console.WriteLine("File Manager-exercise");
+          
 
-            FileManager fm = new FileManager(filePath); //selvitä virhe
-            try
-            {
-                string text = fm.ReadWords();
-                Console.WriteLine(text);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-            WriteFile();
-            ReadFile();
-            WriteJsonFile();
+            //WriteFile();
+            //ReadFile();
+            //WriteJsonFile();
             ReadJsonFile();
-
-
 
         }
         static void WriteFile()
@@ -62,13 +50,14 @@ namespace FileExercise
         {
             Console.WriteLine("\nWriting Json data to books.txt file");
 
-            const string jsonFile =@"C:\Users\Elina\source\repos\ObjectOrientedProgramming\FileExercise\books.txt";
+            const string jsonFile =@"C:\Users\Elina\source\repos\ObjectOrientedProgramming\FileExercise\books.json";
 
             List<Book> bookList = new List<Book>();
             bookList.Add(new Book("Harry Potter"));
 
-            // File.WriteAllText(string path, string contents);
-            //JsonConvert.SerializeObject(Object value);
+            var content = JsonConvert.SerializeObject(bookList);
+            File.WriteAllText(jsonFile, content);
+            
 
             // Serialize JSON to a file
             // https://www.newtonsoft.com/json/help/html/SerializeWithJsonSerializerToFile.htm
@@ -78,7 +67,18 @@ namespace FileExercise
         static void ReadJsonFile()
         {
             Console.WriteLine("\nReading Json data from books.txt file");
+     
 
+            const string jsonFile = @"C:\Users\Elina\source\repos\ObjectOrientedProgramming\FileExercise\books.json";
+            FileManager fileManager = new FileManager(jsonFile);
+            string content = fileManager.ReadWords();
+            List<Book> books = JsonConvert.DeserializeObject<List<Book>>(content);
+            foreach(Book book in books)
+            {
+                Console.WriteLine(book.getBookInformation());
+            }
+            List<Book> bookList = new List<Book>();
+            bookList.Add(new Book("Harry Potter"));
             // File.ReadAllText(string path, E
         }
     }

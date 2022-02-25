@@ -1,14 +1,1 @@
-﻿[
-  {
-    "title": "Aku Ankka",
-    "id": "abc",
-    "author": "Walt Disney",
-    "price": 10.0
-  },
-  {
-    "title": "Aku Ankka",
-    "id": "abc",
-    "author": "Walt Disney",
-    "price": 10.0
-  }
-]
+[{"title":"Harry Potter","author":null,"id":null,"price":0.0}]
