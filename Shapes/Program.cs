@@ -15,7 +15,7 @@ namespace Shapes
                 new Circle("sininen", 2),
                 new Triangle(4,7, "vihreä"),
                 new Triangle(8,12, "keltainen"),
-                new Rectangle(6,10, "musta")
+                new Rectangle(6,10, "violetti")
 
             };
             allShapes.Sort();
