@@ -22,5 +22,10 @@ namespace Shapes
         {
             return Math.PI * this.radius * this.radius;
         }
+
+        public override string GetInfo()
+        {
+            return base.GetInfo();
+        }
     }
 }
